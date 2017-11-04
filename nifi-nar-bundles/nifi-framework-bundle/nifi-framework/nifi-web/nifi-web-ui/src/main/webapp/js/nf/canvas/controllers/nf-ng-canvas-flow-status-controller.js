@@ -269,7 +269,7 @@
                     var class1 = 'search-container-opened';
                     var class2 = 'search-container-closed';
                     if (!isVisible) {
-                        searchCtrl.getButtonElement().css('background-color', '#FFFFFF');
+                        searchCtrl.getButtonElement().css('background-color', '#555555');
                         display = 'inline-block';
                         class1 = 'search-container-closed';
                         class2 = 'search-container-opened';
@@ -280,7 +280,7 @@
                     this.getSearchContainerElement().switchClass(class1, class2, 500, function () {
                         searchCtrl.getInputElement().css('display', display);
                         if (!isVisible) {
-                            searchCtrl.getButtonElement().css('background-color', '#FFFFFF');
+                            searchCtrl.getButtonElement().css('background-color', '#555555');
                             searchCtrl.getInputElement().focus();
                         } else {
                             searchCtrl.getButtonElement().css('background-color', '#E3E8EB');

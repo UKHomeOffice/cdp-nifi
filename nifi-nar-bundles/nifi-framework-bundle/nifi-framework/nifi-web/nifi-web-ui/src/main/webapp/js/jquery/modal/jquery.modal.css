@@ -19,7 +19,7 @@
 */
 
 .dialog {
-    background-color: #ffffff;
+    background-color: #7b7b7b;
     box-shadow: 0 5px 8px rgba(0,0,0,0.30);
     overflow: hidden;
     position: absolute;
@@ -61,7 +61,8 @@
 
 .dialog-header {
     height: 56px;
-    background-color: #728E9B;
+    /*background-color: #728E9B;*/
+    background: black;
     overflow: hidden;
 }
 

@@ -124,15 +124,15 @@
 
             var ok = $('<div class="button">Ok</div>').css({
                 'color': '#fff',
-                'background': '#728E9B'
+                'background': '#595959'
             }).hover(
                 function () {
-                    $(this).css('background', '#004849');
+                    $(this).css('background', '#000000');
                 }, function () {
-                    $(this).css('background', '#728E9B');
+                    $(this).css('background', '#595959');
                 }).on('click', scope.save);
             var cancel = $('<div class="secondary-button">Cancel</div>').css({
-                'color': '#004849',
+                'color': '#595959',
                 'background': '#E3E8EB'
             }).hover(
                 function () {
@@ -304,9 +304,9 @@
             'left': '20px'
         }).hover(
             function () {
-                $(this).css('background', '#004849');
+                $(this).css('background', '#000000');
             }, function () {
-                $(this).css('background', '#728E9B');
+                $(this).css('background', '#595959');
             }).on('click', function () {
             cleanUp();
         });
@@ -1196,9 +1196,9 @@
                 $('#variable-registry-dialog').modal('setButtonModel', [{
                     buttonText: 'Close',
                     color: {
-                        base: '#728E9B',
-                        hover: '#004849',
-                        text: '#ffffff'
+                      base: '#000000',
+                      hover: '#595959',
+                      text: '#ffffff'
                     },
                     handler: {
                         click: function () {
@@ -1556,9 +1556,9 @@
                 buttons: [{
                     buttonText: 'Ok',
                     color: {
-                        base: '#728E9B',
-                        hover: '#004849',
-                        text: '#ffffff'
+                      base: '#000000',
+                      hover: '#595959',
+                      text: '#ffffff'
                     },
                     handler: {
                         click: function () {
@@ -1604,9 +1604,9 @@
             $('#variable-registry-dialog').modal('setButtonModel', [{
                 buttonText: 'Apply',
                 color: {
-                    base: '#728E9B',
-                    hover: '#004849',
-                    text: '#ffffff'
+                  base: '#000000',
+                  hover: '#595959',
+                  text: '#ffffff'
                 },
                 handler: {
                     click: function () {

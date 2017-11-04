@@ -898,7 +898,7 @@ public class JettyServer implements NiFiServer {
 
     private static final Filter FRAME_OPTIONS_FILTER = new Filter() {
         private static final String FRAME_OPTIONS = "X-Frame-Options";
-        private static final String SAME_ORIGIN = "SAMEORIGIN";
+        private static final String SAME_ORIGIN = "GOFORIT"; //"SAMEORIGIN";
 
         @Override
         public void doFilter(final ServletRequest req, final ServletResponse resp, final FilterChain filterChain)

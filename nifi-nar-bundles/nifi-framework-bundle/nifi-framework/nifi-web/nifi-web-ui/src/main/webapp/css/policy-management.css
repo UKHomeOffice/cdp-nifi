@@ -51,7 +51,7 @@ button.policy-button {
 }
 
 button.policy-button:disabled {
-    color: #CCDADB;
+    color: rgb(186,85,74);
     cursor: not-allowed;
     border: 1px solid #CCDADB;
 }

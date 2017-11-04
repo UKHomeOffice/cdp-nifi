@@ -90,11 +90,14 @@
 /*remove margin from font awesome*/
 i[class^="fa-"]:before, i[class*=" fa-"]:before {
     margin: -1px;
+    color: white;
 }
 
 /*remove margin from flowfont*/
 i[class^="icon-"]:before, i[class*=" icon-"]:before {
     margin: -2px;
+    color: white;
+
 }
 
 /*shift rotated font awesome icons*/
@@ -338,7 +341,7 @@ button:hover {
 }
 
 button:disabled {
-    color: #CCDADB !important; /*tint link-color 80%*/
+    color:#728e9b;  !important; /*tint link-color 80%*/
     cursor: not-allowed;
     border: 1px solid #CCDADB; /*tint link-color 80%*/
 }
@@ -436,7 +439,7 @@ div.button {
     border: 0px;
     float: right;
     position: relative;
-    background: #728E9B;
+    background: #595959;
     color: #fff;
     cursor: pointer;
 }
@@ -510,7 +513,7 @@ div.nifi-tooltip {
     z-index: 10006;
     font-size: 13px;
     padding:3px 0;
-    background-color:rgba(249,250,251,0.97); /*tint base-color 96%*/
+    background-color:rgba(133, 133, 133, 0.97); /*tint base-color 96%*/
     border:1px solid #004849; /*link-color*/
     box-shadow: 0 3px 6px rgba(0,0,0,0.3);
     width: 215px;
@@ -541,6 +544,7 @@ div.context-menu-item.hover {
     position: relative;
     top: 2px;
     left: 2px;
+    color:white;
 }
 
 .context-menu-item-img.icon {
@@ -612,7 +616,7 @@ md-progress-linear > div {
 .setting-field {
     line-height: normal;
     width: 100%;
-    color: #775351;
+    color: white ; /*#775351;*/
     font-size: 13px;
     font-weight: 500;
 }
