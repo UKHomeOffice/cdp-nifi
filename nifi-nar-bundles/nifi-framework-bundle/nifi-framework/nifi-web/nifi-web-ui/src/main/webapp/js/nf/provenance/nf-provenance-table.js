@@ -69,7 +69,7 @@
                 provenance: '../nifi-api/provenance',
                 provenanceEvents: '../nifi-api/provenance-events/',
                 clusterSearch: '../nifi-api/flow/cluster/search-results',
-                d3Script: 'js/d3/build/d3.min.js',
+                d3Script: 'js/d3/d3.min.js',
                 lineageScript: 'js/nf/provenance/nf-provenance-lineage.js',
                 uiExtensionToken: '../nifi-api/access/ui-extension-token',
                 downloadToken: '../nifi-api/access/download-token'
@@ -236,9 +236,9 @@
                 buttons: [{
                     buttonText: 'Ok',
                     color: {
-                        base: '#728E9B',
-                        hover: '#004849',
-                        text: '#ffffff'
+                      base: '#000000',
+                      hover: '#595959',
+                      text: '#ffffff'
                     },
                     handler: {
                         click: function () {
@@ -401,9 +401,9 @@
                 buttons: [{
                     buttonText: 'Search',
                     color: {
-                        base: '#728E9B',
-                        hover: '#004849',
-                        text: '#ffffff'
+                      base: '#000000',
+                      hover: '#595959',
+                      text: '#ffffff'
                     },
                     handler: {
                         click: function () {
@@ -1348,11 +1348,6 @@
 
                     // conditionally show SEND details
                     if (event.eventType === 'SEND') {
-                        formatEventDetail('Transit Uri', event.transitUri);
-                    }
-
-                    // conditionally show REMOTE_INVOCATION details
-                    if (event.eventType === 'REMOTE_INVOCATION') {
                         formatEventDetail('Transit Uri', event.transitUri);
                     }
 

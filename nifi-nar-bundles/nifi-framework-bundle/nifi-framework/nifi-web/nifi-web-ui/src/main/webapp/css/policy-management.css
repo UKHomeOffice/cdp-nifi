@@ -51,7 +51,7 @@ button.policy-button {
 }
 
 button.policy-button:disabled {
-    color: #CCDADB;
+    color: rgb(186,85,74);
     cursor: not-allowed;
     border: 1px solid #CCDADB;
 }
@@ -89,7 +89,7 @@ div.policy-controls {
     float: left;
 }
 
-#policy-type-list, #restricted-component-required-permissions {
+#policy-type-list {
     float: left;
     width: 225px;
     margin-right: 3px;
@@ -275,7 +275,7 @@ div.remove-allowed-entity {
     admin policy message
 */
 
-#admin-policy-message, #restriction-message {
+#admin-policy-message {
     float: right;
     margin-top: 8px;
     color: #775351;

@@ -81,7 +81,7 @@
 }
 
 #cluster-search-example {
-    color: #775351;
+    color: #ffffff;
     font-weight: bold;
     line-height: normal;
     margin-top: 3px;
@@ -101,23 +101,6 @@ div.search-match {
 
 input.search-nodes {
     color: #888;
-}
-
-div.is-primary-icon {
-    color: #000;
-    font-family: Roboto;
-    font-size: 10px;
-    font-weight: bold;
-    line-height: 14px;
-    width: 14px;
-    height: 14px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 1px solid #aaa;
-    border-radius: 7px;
-    margin-right: 3px;
-    margin-top: 3px;
-    float: left;
-    text-align: center;
 }
 
 /* system diagnostics dialog */
@@ -421,7 +404,7 @@ span.sorted {
 #cluster-processor-id {
     font-size: 12px;
     font-family: Roboto;
-    color: #775351;
+    color: #f4f6f7;
     position: absolute;
     bottom: 0px;
     text-overflow: ellipsis;
@@ -519,7 +502,7 @@ span.sorted {
 #cluster-input-port-id {
     font-size: 12px;
     font-family: Roboto;
-    color: #775351;
+    color: #ffffaa;
     position: absolute;
     bottom: 0px;
     text-overflow: ellipsis;
@@ -617,7 +600,7 @@ span.sorted {
 #cluster-output-port-id {
     font-size: 12px;
     font-family: Roboto;
-    color: #775351;
+    color: #ffcc00;
     position: absolute;
     bottom: 0px;
     text-overflow: ellipsis;
@@ -715,7 +698,7 @@ span.sorted {
 #cluster-remote-process-group-id {
     font-size: 12px;
     font-family: Roboto;
-    color: #775351;
+    color: #ff5500;
     position: absolute;
     bottom: 0px;
     text-overflow: ellipsis;
@@ -813,7 +796,7 @@ span.sorted {
 #cluster-connection-id {
     font-size: 12px;
     font-family: Roboto;
-    color: #775351;
+    color: #ffcc00;
     position: absolute;
     bottom: 0px;
     text-overflow: ellipsis;
@@ -911,7 +894,7 @@ span.sorted {
 #cluster-process-group-id {
     font-size: 12px;
     font-family: Roboto;
-    color: #775351;
+    color: #ffcc00;
     position: absolute;
     bottom: 0px;
     text-overflow: ellipsis;

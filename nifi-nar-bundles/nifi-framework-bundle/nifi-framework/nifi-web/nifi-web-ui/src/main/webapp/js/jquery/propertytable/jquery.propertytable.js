@@ -143,15 +143,15 @@
 
             var ok = $('<div class="button">Ok</div>').css({
                 'color': '#fff',
-                'background': '#728E9B'
+                'background': '#595959'
             }).hover(
                 function () {
-                    $(this).css('background', '#004849');
+                    $(this).css('background', '#595959');
                 }, function () {
-                    $(this).css('background', '#728E9B');
+                    $(this).css('background', '#ffffff');
                 }).on('click', scope.save);
             var cancel = $('<div class="secondary-button">Cancel</div>').css({
-                'color': '#004849',
+                'color': '#000000',
                 'background': '#E3E8EB'
             }).hover(
                 function () {
@@ -373,15 +373,15 @@
 
             var ok = $('<div class="button">Ok</div>').css({
                 'color': '#fff',
-                'background': '#728E9B'
+                'background': '#898989'
             }).hover(
                 function () {
-                    $(this).css('background', '#004849');
+                    $(this).css('background', '#595959');
                 }, function () {
-                    $(this).css('background', '#728E9B');
+                    $(this).css('background', '#ffffff');
                 }).on('click', scope.save);
             var cancel = $('<div class="secondary-button">Cancel</div>').css({
-                'color': '#004849',
+                'color': '#595959',
                 'background': '#E3E8EB'
             }).hover(
                 function () {
@@ -632,12 +632,12 @@
                 }).on('click', scope.cancel);
             var ok = $('<div class="button">Ok</div>').css({
                 'color': '#fff',
-                'background': '#728E9B'
+                'background': '#595959'
             }).hover(
                 function () {
-                    $(this).css('background', '#004849');
+                    $(this).css('background', '#000000');
                 }, function () {
-                    $(this).css('background', '#728E9B');
+                    $(this).css('background', '#595959');
                 }).on('click', scope.save);
 
             $('<div></div>').css({
@@ -824,9 +824,9 @@
                         'left': '20px'
                     }).hover(
                         function () {
-                            $(this).css('background', '#004849');
+                            $(this).css('background', '#595959');
                         }, function () {
-                            $(this).css('background', '#728E9B');
+                            $(this).css('background', '#797979');
                         }).on('click', function () {
                         wrapper.hide().remove();
                     }).appendTo(wrapper);
@@ -1078,9 +1078,9 @@
                     buttons: [{
                         buttonText: 'Create',
                         color: {
-                            base: '#728E9B',
-                            hover: '#004849',
-                            text: '#ffffff'
+                          base: '#000000',
+                          hover: '#595959',
+                          text: '#ffffff'
                         },
                         handler: {
                             click: function () {
@@ -1093,7 +1093,7 @@
                             color: {
                                 base: '#E3E8EB',
                                 hover: '#C7D2D7',
-                                text: '#004849'
+                                text: '#595959'
                             },
                             handler: {
                                 click: function () {
@@ -1701,9 +1701,9 @@
                             buttons: [{
                                 buttonText: 'Ok',
                                 color: {
-                                    base: '#728E9B',
-                                    hover: '#004849',
-                                    text: '#ffffff'
+                                  base: '#000000',
+                                  hover: '#595959',
+                                  text: '#ffffff'
                                 },
                                 handler: {
                                     click: function () {

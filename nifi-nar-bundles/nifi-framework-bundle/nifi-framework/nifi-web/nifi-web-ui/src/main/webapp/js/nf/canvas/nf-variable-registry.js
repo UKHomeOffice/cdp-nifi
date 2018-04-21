@@ -71,8 +71,6 @@
 }(this, function ($, d3, Slick, nfCanvas, nfCanvasUtils, nfErrorHandler, nfDialog, nfClient, nfCommon, nfNgBridge, nfProcessor, nfProcessGroup, nfProcessGroupConfiguration) {
     'use strict';
 
-    var lastSelectedId = null;
-
     // text editor
     var textEditor = function (args) {
         var scope = this;
@@ -126,15 +124,15 @@
 
             var ok = $('<div class="button">Ok</div>').css({
                 'color': '#fff',
-                'background': '#728E9B'
+                'background': '#595959'
             }).hover(
                 function () {
-                    $(this).css('background', '#004849');
+                    $(this).css('background', '#000000');
                 }, function () {
-                    $(this).css('background', '#728E9B');
+                    $(this).css('background', '#595959');
                 }).on('click', scope.save);
             var cancel = $('<div class="secondary-button">Cancel</div>').css({
-                'color': '#004849',
+                'color': '#595959',
                 'background': '#E3E8EB'
             }).hover(
                 function () {
@@ -306,9 +304,9 @@
             'left': '20px'
         }).hover(
             function () {
-                $(this).css('background', '#004849');
+                $(this).css('background', '#000000');
             }, function () {
-                $(this).css('background', '#728E9B');
+                $(this).css('background', '#595959');
             }).on('click', function () {
             cleanUp();
         });
@@ -570,15 +568,9 @@
                     var variableIndex = args.rows[0];
                     var variable = variablesGrid.getDataItem(variableIndex);
 
-                    // only populate affected components if this variable is different than the last selected
-                    if (lastSelectedId === null || lastSelectedId !== variable.id) {
-                        // update the details for this variable
-                        $('#affected-components-context').removeClass('unset').text(variable.name);
-                        populateAffectedComponents(variable.affectedComponents);
-
-                        // update the last selected id
-                        lastSelectedId = variable.id;
-                    }
+                    // update the details for this variable
+                    $('#affected-components-context').removeClass('unset').text(variable.name);
+                    populateAffectedComponents(variable.affectedComponents);
                 }
             }
         });
@@ -778,7 +770,7 @@
         $('<div class="referencing-component-bulletins"></div>').addClass(affectedControllerService.id + '-affected-bulletins').appendTo(affectedControllerServiceContainer);
 
         // controller service name
-        $('<span class="referencing-component-name link"></span>').text(affectedControllerService.name).on('click', function () {
+        $('<span class="link"></span>').text(affectedControllerService.name).on('click', function () {
             // check if there are outstanding changes
             handleOutstandingChanges().done(function () {
                 // show the component in question
@@ -920,7 +912,7 @@
                         })
                         .map(bulletins, d3.map);
 
-                    bulletinsBySource.each(function (sourceBulletins, sourceId) {
+                    bulletinsBySource.forEach(function (sourceId, sourceBulletins) {
                         $('div.' + sourceId + '-affected-bulletins').each(function () {
                             var bulletinIcon = $(this);
 
@@ -1204,9 +1196,9 @@
                 $('#variable-registry-dialog').modal('setButtonModel', [{
                     buttonText: 'Close',
                     color: {
-                        base: '#728E9B',
-                        hover: '#004849',
-                        text: '#ffffff'
+                      base: '#000000',
+                      hover: '#595959',
+                      text: '#ffffff'
                     },
                     handler: {
                         click: function () {
@@ -1536,9 +1528,6 @@
         affectedControllerServicesContainer.empty();
 
         $('#variable-registry-affected-unauthorized-components').empty();
-
-        // reset the last selected variable
-        lastSelectedId = null;
     };
 
     return {
@@ -1567,9 +1556,9 @@
                 buttons: [{
                     buttonText: 'Ok',
                     color: {
-                        base: '#728E9B',
-                        hover: '#004849',
-                        text: '#ffffff'
+                      base: '#000000',
+                      hover: '#595959',
+                      text: '#ffffff'
                     },
                     handler: {
                         click: function () {
@@ -1615,9 +1604,9 @@
             $('#variable-registry-dialog').modal('setButtonModel', [{
                 buttonText: 'Apply',
                 color: {
-                    base: '#728E9B',
-                    hover: '#004849',
-                    text: '#ffffff'
+                  base: '#000000',
+                  hover: '#595959',
+                  text: '#ffffff'
                 },
                 handler: {
                     click: function () {

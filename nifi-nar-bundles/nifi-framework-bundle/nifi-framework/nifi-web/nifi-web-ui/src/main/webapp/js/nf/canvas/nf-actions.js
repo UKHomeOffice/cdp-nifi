@@ -33,7 +33,6 @@
                 'nf.Shell',
                 'nf.VariableRegistry',
                 'nf.ComponentState',
-                'nf.FlowVersion',
                 'nf.Draggable',
                 'nf.Birdseye',
                 'nf.Connection',
@@ -56,8 +55,8 @@
                 'nf.ComponentVersion',
                 'nf.QueueListing',
                 'nf.StatusHistory'],
-            function ($, d3, nfCanvasUtils, nfCommon, nfDialog, nfClient, nfErrorHandler, nfClipboard, nfSnippet, nfGoto, nfNgBridge, nfShell, nfVariableRegistry, nfComponentState, nfFlowVersion, nfDraggable, nfBirdseye, nfConnection, nfGraph, nfProcessGroupConfiguration, nfProcessorConfiguration, nfProcessorDetails, nfLabelConfiguration, nfRemoteProcessGroupConfiguration, nfRemoteProcessGroupDetails, nfPortConfiguration, nfPortDetails, nfConnectionConfiguration, nfConnectionDetails, nfPolicyManagement, nfRemoteProcessGroup, nfLabel, nfProcessor, nfRemoteProcessGroupPorts, nfComponentVersion, nfQueueListing, nfStatusHistory) {
-                return (nf.Actions = factory($, d3, nfCanvasUtils, nfCommon, nfDialog, nfClient, nfErrorHandler, nfClipboard, nfSnippet, nfGoto, nfNgBridge, nfShell, nfVariableRegistry, nfComponentState, nfFlowVersion, nfDraggable, nfBirdseye, nfConnection, nfGraph, nfProcessGroupConfiguration, nfProcessorConfiguration, nfProcessorDetails, nfLabelConfiguration, nfRemoteProcessGroupConfiguration, nfRemoteProcessGroupDetails, nfPortConfiguration, nfPortDetails, nfConnectionConfiguration, nfConnectionDetails, nfPolicyManagement, nfRemoteProcessGroup, nfLabel, nfProcessor, nfRemoteProcessGroupPorts, nfComponentVersion, nfQueueListing, nfStatusHistory));
+            function ($, d3, nfCanvasUtils, nfCommon, nfDialog, nfClient, nfErrorHandler, nfClipboard, nfSnippet, nfGoto, nfNgBridge, nfShell, nfVariableRegistry, nfComponentState, nfDraggable, nfBirdseye, nfConnection, nfGraph, nfProcessGroupConfiguration, nfProcessorConfiguration, nfProcessorDetails, nfLabelConfiguration, nfRemoteProcessGroupConfiguration, nfRemoteProcessGroupDetails, nfPortConfiguration, nfPortDetails, nfConnectionConfiguration, nfConnectionDetails, nfPolicyManagement, nfRemoteProcessGroup, nfLabel, nfProcessor, nfRemoteProcessGroupPorts, nfComponentVersion, nfQueueListing, nfStatusHistory) {
+                return (nf.Actions = factory($, d3, nfCanvasUtils, nfCommon, nfDialog, nfClient, nfErrorHandler, nfClipboard, nfSnippet, nfGoto, nfNgBridge, nfShell, nfVariableRegistry, nfComponentState, nfDraggable, nfBirdseye, nfConnection, nfGraph, nfProcessGroupConfiguration, nfProcessorConfiguration, nfProcessorDetails, nfLabelConfiguration, nfRemoteProcessGroupConfiguration, nfRemoteProcessGroupDetails, nfPortConfiguration, nfPortDetails, nfConnectionConfiguration, nfConnectionDetails, nfPolicyManagement, nfRemoteProcessGroup, nfLabel, nfProcessor, nfRemoteProcessGroupPorts, nfComponentVersion, nfQueueListing, nfStatusHistory));
             });
     } else if (typeof exports === 'object' && typeof module === 'object') {
         module.exports = (nf.Actions =
@@ -75,7 +74,6 @@
                 require('nf.Shell'),
                 require('nf.VariableRegistry'),
                 require('nf.ComponentState'),
-                require('nf.FlowVersion'),
                 require('nf.Draggable'),
                 require('nf.Birdseye'),
                 require('nf.Connection'),
@@ -113,7 +111,6 @@
             root.nf.Shell,
             root.nf.VariableRegistry,
             root.nf.ComponentState,
-            root.nf.FlowVersion,
             root.nf.Draggable,
             root.nf.Birdseye,
             root.nf.Connection,
@@ -137,7 +134,7 @@
             root.nf.QueueListing,
             root.nf.StatusHistory);
     }
-}(this, function ($, d3, nfCanvasUtils, nfCommon, nfDialog, nfClient, nfErrorHandler, nfClipboard, nfSnippet, nfGoto, nfNgBridge, nfShell, nfVariableRegistry, nfComponentState, nfFlowVersion, nfDraggable, nfBirdseye, nfConnection, nfGraph, nfProcessGroupConfiguration, nfProcessorConfiguration, nfProcessorDetails, nfLabelConfiguration, nfRemoteProcessGroupConfiguration, nfRemoteProcessGroupDetails, nfPortConfiguration, nfPortDetails, nfConnectionConfiguration, nfConnectionDetails, nfPolicyManagement, nfRemoteProcessGroup, nfLabel, nfProcessor, nfRemoteProcessGroupPorts, nfComponentVersion, nfQueueListing, nfStatusHistory) {
+}(this, function ($, d3, nfCanvasUtils, nfCommon, nfDialog, nfClient, nfErrorHandler, nfClipboard, nfSnippet, nfGoto, nfNgBridge, nfShell, nfVariableRegistry, nfComponentState, nfDraggable, nfBirdseye, nfConnection, nfGraph, nfProcessGroupConfiguration, nfProcessorConfiguration, nfProcessorDetails, nfLabelConfiguration, nfRemoteProcessGroupConfiguration, nfRemoteProcessGroupDetails, nfPortConfiguration, nfPortDetails, nfConnectionConfiguration, nfConnectionDetails, nfPolicyManagement, nfRemoteProcessGroup, nfLabel, nfProcessor, nfRemoteProcessGroupPorts, nfComponentVersion, nfQueueListing, nfStatusHistory) {
     'use strict';
 
     var config = {
@@ -493,6 +490,11 @@
 
                 // center on the component
                 nfCanvasUtils.centerBoundingBox(box);
+
+                // refresh the canvas
+                nfCanvasUtils.refreshCanvasView({
+                    transition: true
+                });
             }
         },
 
@@ -915,7 +917,7 @@
         'delete': function (selection) {
             if (nfCommon.isUndefined(selection) || selection.empty()) {
                 nfDialog.showOkDialog({
-                    headerText: 'Delete Components',
+                    headerText: 'Reload',
                     dialogContent: 'No eligible components are selected. Please select the components to be deleted.'
                 });
             } else {
@@ -991,7 +993,7 @@
                             });
 
                             // remove all the non connections in the snippet first
-                            components.each(function (ids, type) {
+                            components.forEach(function (type, ids) {
                                 if (type !== 'Connection') {
                                     nfCanvasUtils.getComponentByType(type).remove(ids);
                                 }
@@ -1058,9 +1060,9 @@
                     $('#drop-request-status-dialog').modal('setButtonModel', [{
                         buttonText: 'Stop',
                         color: {
-                            base: '#728E9B',
-                            hover: '#004849',
-                            text: '#ffffff'
+                          base: '#000000',
+                          hover: '#595959',
+                          text: '#ffffff'
                         },
                         handler: {
                             click: function () {
@@ -1232,70 +1234,6 @@
 
             // view the state for the selected processor
             nfComponentState.showState(processor, nfCanvasUtils.isConfigurable(selection));
-        },
-
-        /**
-         * Shows the flow version dialog.
-         */
-        saveFlowVersion: function (selection) {
-            if (selection.empty()) {
-                nfFlowVersion.showFlowVersionDialog(nfCanvasUtils.getGroupId());
-            } else if (selection.size() === 1) {
-                var selectionData = selection.datum();
-                if (nfCanvasUtils.isProcessGroup(selection)) {
-                    nfFlowVersion.showFlowVersionDialog(selectionData.id);
-                }
-            }
-        },
-
-        /**
-         * Reverts local changes.
-         */
-        revertLocalChanges: function (selection) {
-            if (selection.empty()) {
-                nfFlowVersion.revertLocalChanges(nfCanvasUtils.getGroupId());
-            } else if (selection.size() === 1) {
-                var selectionData = selection.datum();
-                nfFlowVersion.revertLocalChanges(selectionData.id);
-            }
-        },
-
-        /**
-         * Shows local changes.
-         */
-        showLocalChanges: function (selection) {
-            if (selection.empty()) {
-                nfFlowVersion.showLocalChanges(nfCanvasUtils.getGroupId());
-            } else if (selection.size() === 1) {
-                var selectionData = selection.datum();
-                nfFlowVersion.showLocalChanges(selectionData.id)
-            }
-        },
-
-        /**
-         * Changes the flow version.
-         */
-        changeFlowVersion: function (selection) {
-            if (selection.empty()) {
-                nfFlowVersion.showChangeFlowVersionDialog(nfCanvasUtils.getGroupId());
-            } else if (selection.size() === 1) {
-                var selectionData = selection.datum();
-                if (nfCanvasUtils.isProcessGroup(selection)) {
-                    nfFlowVersion.showChangeFlowVersionDialog(selectionData.id);
-                }
-            }
-        },
-
-        /**
-         * Disconnects a Process Group from flow versioning.
-         */
-        stopVersionControl: function (selection) {
-            if (selection.empty()) {
-                nfFlowVersion.stopVersionControl(nfCanvasUtils.getGroupId());
-            } else if (selection.size() === 1) {
-                var selectionData = selection.datum();
-                nfFlowVersion.stopVersionControl(selectionData.id);
-            }
         },
 
         /**
@@ -1530,7 +1468,7 @@
             var origin = nfCanvasUtils.getOrigin(selection);
 
             var pt = {'x': origin.x, 'y': origin.y};
-            $.when(nfNgBridge.injector.get('groupComponent').promptForGroupName(pt, false)).done(function (processGroup) {
+            $.when(nfNgBridge.injector.get('groupComponent').promptForGroupName(pt)).done(function (processGroup) {
                 var group = d3.select('#id-' + processGroup.id);
                 nfCanvasUtils.moveComponents(selection, group);
             });
@@ -1595,9 +1533,9 @@
             $('#new-template-dialog').modal('setButtonModel', [{
                 buttonText: 'Create',
                 color: {
-                    base: '#728E9B',
-                    hover: '#004849',
-                    text: '#ffffff'
+                  base: '#000000',
+                  hover: '#595959',
+                  text: '#ffffff'
                 },
                 handler: {
                     click: function () {
@@ -1657,7 +1595,7 @@
                 color: {
                     base: '#E3E8EB',
                     hover: '#C7D2D7',
-                    text: '#004849'
+                    text: '#595959'
                 },
                 handler: {
                     click: function () {
@@ -1704,8 +1642,8 @@
         paste: function (selection, evt) {
             if (nfCommon.isDefinedAndNotNull(evt)) {
                 // get the current scale and translation
-                var scale = nfCanvasUtils.getCanvasScale();
-                var translate = nfCanvasUtils.getCanvasTranslate();
+                var scale = nfCanvasUtils.scaleCanvasView();
+                var translate = nfCanvasUtils.translateCanvasView();
 
                 var mouseX = evt.pageX;
                 var mouseY = evt.pageY - nfCanvasUtils.getCanvasOffset();

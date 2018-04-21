@@ -525,8 +525,8 @@
                 var buttons = [{
                     buttonText: 'Apply',
                     color: {
-                        base: '#728E9B',
-                        hover: '#004849',
+                        base: '#000000',
+                        hover: '#595959',
                         text: '#ffffff'
                     },
                     handler: {
@@ -550,7 +550,7 @@
                         color: {
                             base: '#E3E8EB',
                             hover: '#C7D2D7',
-                            text: '#004849'
+                            text: '#000000'
                         },
                         handler: {
                             click: function () {
@@ -567,7 +567,7 @@
                         color: {
                             base: '#E3E8EB',
                             hover: '#C7D2D7',
-                            text: '#004849'
+                            text: '#000000'
                         },
                         handler: {
                             click: function () {
@@ -696,8 +696,8 @@
                 var buttons = [{
                     buttonText: 'Ok',
                     color: {
-                        base: '#728E9B',
-                        hover: '#004849',
+                        base: '#000000',
+                        hover: '#595959',
                         text: '#ffffff'
                     },
                     handler: {
@@ -716,7 +716,7 @@
                         color: {
                             base: '#E3E8EB',
                             hover: '#C7D2D7',
-                            text: '#004849'
+                            text: '#595959'
                         },
                         handler: {
                             click: function () {

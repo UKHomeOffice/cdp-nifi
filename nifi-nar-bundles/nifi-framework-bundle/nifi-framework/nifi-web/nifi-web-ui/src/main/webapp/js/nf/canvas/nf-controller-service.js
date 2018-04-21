@@ -415,7 +415,7 @@
             })
             .map(bulletins, d3.map);
 
-        bulletinsBySource.each(function (sourceBulletins, sourceId) {
+        bulletinsBySource.forEach(function (sourceId, sourceBulletins) {
             $('div.' + sourceId + '-bulletins').each(function () {
                 updateBulletins(sourceBulletins, $(this));
             });
@@ -789,7 +789,7 @@
 
                     // start polling for each controller service
                     var polling = [];
-                    services.each(function (controllerServiceId) {
+                    services.forEach(function (controllerServiceId) {
                         getControllerService(controllerServiceId, controllerServiceData).done(function(controllerServiceEntity) {
                             polling.push(stopReferencingSchedulableComponents(controllerServiceEntity, pollCondition));
                         });
@@ -864,7 +864,8 @@
                     dataType: 'json'
                 });
 
-                $.when(bulletins, service).done(function (bulletinResponse, serviceResult) {
+                $.when(bulletins, service).done(function (bulletinResult, serviceResult) {
+                    var bulletinResponse = bulletinResult[0];
                     var serviceResponse = serviceResult[0];
                     conditionMet(serviceResponse.component, bulletinResponse.bulletinBoard.bulletins);
                 }).fail(function (xhr, status, error) {
@@ -1080,7 +1081,7 @@
 
                 // start polling for each controller service
                 var polling = [];
-                services.each(function (controllerServiceId) {
+                services.forEach(function (controllerServiceId) {
                     getControllerService(controllerServiceId, controllerServiceData).done(function(controllerServiceEntity) {
                         if (enabled) {
                             polling.push(enableReferencingServices(controllerServiceEntity, pollCondition));
@@ -1119,9 +1120,9 @@
         var buttons = [{
             buttonText: 'Disable',
             color: {
-                base: '#728E9B',
-                hover: '#004849',
-                text: '#ffffff'
+              base: '#000000',
+              hover: '#595959',
+              text: '#ffffff'
             },
             handler: {
                 click: function () {
@@ -1133,7 +1134,7 @@
             color: {
                 base: '#E3E8EB',
                 hover: '#C7D2D7',
-                text: '#004849'
+                text: '#595959'
             },
             handler: {
                 click: closeModal
@@ -1171,9 +1172,9 @@
         var buttons = [{
             buttonText: 'Enable',
             color: {
-                base: '#728E9B',
-                hover: '#004849',
-                text: '#ffffff'
+              base: '#000000',
+              hover: '#595959',
+              text: '#ffffff'
             },
             handler: {
                 click: function () {
@@ -1185,7 +1186,7 @@
             color: {
                 base: '#E3E8EB',
                 hover: '#C7D2D7',
-                text: '#004849'
+                text: '#595959'
             },
             handler: {
                 click: closeModal
@@ -1259,9 +1260,9 @@
             disableDialog.modal('setButtonModel', [{
                 buttonText: 'Close',
                 color: {
-                    base: '#728E9B',
-                    hover: '#004849',
-                    text: '#ffffff'
+                  base: '#000000',
+                  hover: '#595959',
+                  text: '#ffffff'
                 },
                 handler: {
                     click: closeModal
@@ -1385,7 +1386,7 @@
             color: {
                 base: '#E3E8EB',
                 hover: '#C7D2D7',
-                text: '#004849'
+                text: '#595959'
             },
             handler: {
                 click: function () {
@@ -1412,9 +1413,9 @@
             enableDialog.modal('setButtonModel', [{
                 buttonText: 'Close',
                 color: {
-                    base: '#728E9B',
-                    hover: '#004849',
-                    text: '#ffffff'
+                  base: '#000000',
+                  hover: '#595959',
+                  text: '#ffffff'
                 },
                 handler: {
                     click: closeModal
@@ -1883,9 +1884,9 @@
                 var buttons = [{
                     buttonText: 'Apply',
                     color: {
-                        base: '#728E9B',
-                        hover: '#004849',
-                        text: '#ffffff'
+                      base: '#000000',
+                      hover: '#595959',
+                      text: '#ffffff'
                     },
                     handler: {
                         click: function () {
@@ -1906,7 +1907,7 @@
                     color: {
                         base: '#E3E8EB',
                         hover: '#C7D2D7',
-                        text: '#004849'
+                        text: '#595959'
                     },
                     handler: {
                         click: function () {
@@ -2064,8 +2065,8 @@
                 var buttons = [{
                     buttonText: 'Ok',
                     color: {
-                        base: '#728E9B',
-                        hover: '#004849',
+                        base: '#000000',
+                        hover: '#595959',
                         text: '#ffffff'
                     },
                     handler: {
@@ -2084,7 +2085,7 @@
                         color: {
                             base: '#E3E8EB',
                             hover: '#C7D2D7',
-                            text: '#004849'
+                            text: '#595959'
                         },
                         handler: {
                             click: function () {

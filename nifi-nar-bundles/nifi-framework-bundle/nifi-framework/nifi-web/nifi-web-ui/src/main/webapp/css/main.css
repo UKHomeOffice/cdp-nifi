@@ -86,7 +86,7 @@ div.context-menu-provenance {
 
 .disabled {
     float: left;
-    color: #728e9b !important;
+    color: rgb(186,85,74) !important;
     fill: #728e9b !important;
     text-shadow: 0 0 4px rgba(255,255,255,1);
 }
@@ -149,30 +149,6 @@ div.context-menu-provenance {
     float: left;
     color: #728e9b !important;
     fill: #728e9b !important;
-    margin-top: 0px !important;
-    text-shadow: 0 0 4px rgba(255,255,255,1);
-}
-
-.up-to-date {
-    float: left;
-    color: #3da67a !important;
-    fill: #3da67a !important;
-    margin-top: 0px !important;
-    text-shadow: 0 0 4px rgba(255,255,255,1);
-}
-
-.locally-modified, .sync-failure {
-    float: left;
-    color: #747474 !important;
-    fill: #747474 !important;
-    margin-top: 0px !important;
-    text-shadow: 0 0 4px rgba(255,255,255,1);
-}
-
-.stale, .locally-modified-and-stale {
-    float: left;
-    color: #c7685d !important;
-    fill: #c7685d !important;
     margin-top: 0px !important;
     text-shadow: 0 0 4px rgba(255,255,255,1);
 }

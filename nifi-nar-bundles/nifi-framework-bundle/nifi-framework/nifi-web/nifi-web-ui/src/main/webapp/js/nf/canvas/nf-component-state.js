@@ -230,16 +230,16 @@
                 applyFilter();
             });
 
-            // initialize the component state dialog
+            // initialize the processor configuration dialog
             $('#component-state-dialog').modal({
                 scrollableContentStyle: 'scrollable',
                 headerText: 'Component State',
                 buttons: [{
                     buttonText: 'Close',
                     color: {
-                        base: '#728E9B',
-                        hover: '#004849',
-                        text: '#ffffff'
+                      base: '#000000',
+                      hover: '#595959',
+                      text: '#ffffff'
                     },
                     handler: {
                         click: function () {

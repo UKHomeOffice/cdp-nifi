@@ -74,11 +74,6 @@
             this.controllerStoppedCount = "-";
             this.controllerInvalidCount = "-";
             this.controllerDisabledCount = "-";
-            this.controllerUpToDateCount = "-";
-            this.controllerLocallyModifiedCount = "-";
-            this.controllerStaleCount = "-";
-            this.controllerLocallyModifiedAndStaleCount = "-";
-            this.controllerSyncFailureCount = "-";
             this.statsLastRefreshed = "-";
 
             /**
@@ -200,23 +195,7 @@
                             }
                         },
                         _renderItem: function (ul, match) {
-                            var itemHeader = $('<div class="search-match-header"></div>').text(match.name);
-
-                            var parentGroupHeader = $('<div class="search-match-header"></div>').append(document.createTextNode('Parent: '));
-                            var parentGroup = match.parentGroup.name ? match.parentGroup.name : match.parentGroup.id;
-                            parentGroupHeader = parentGroupHeader.append($('<span></span>').text(parentGroup));
-
-                            var versionedGroupHeader = $('<div class="search-match-header"></div>').append(document.createTextNode('Versioned: '));
-                            var versionedGroup = '-';
-
-                            if (nfCommon.isDefinedAndNotNull(match.versionedGroup)) {
-                                versionedGroup = match.versionedGroup.name ? match.versionedGroup.name : match.versionedGroup.id;
-                            }
-
-                            versionedGroupHeader = versionedGroupHeader.append($('<span></span>').text(versionedGroup));
-                            // create a search item wrapper
-                            var itemContent = $('<a></a>').append(itemHeader).append(parentGroupHeader).append(versionedGroupHeader);
-                            // append all matches
+                            var itemContent = $('<a></a>').append($('<div class="search-match-header"></div>').text(match.name));
                             $.each(match.matches, function (i, match) {
                                 itemContent.append($('<div class="search-match"></div>').text(match));
                             });
@@ -247,10 +226,9 @@
                         },
                         select: function (event, ui) {
                             var item = ui.item;
-                            var group = item.parentGroup;
 
                             // show the selected component
-                            nfCanvasUtils.showComponent(group.id, item.id);
+                            nfCanvasUtils.showComponent(item.groupId, item.id);
 
                             searchCtrl.getInputElement().val('').blur();
 
@@ -291,7 +269,7 @@
                     var class1 = 'search-container-opened';
                     var class2 = 'search-container-closed';
                     if (!isVisible) {
-                        searchCtrl.getButtonElement().css('background-color', '#FFFFFF');
+                        searchCtrl.getButtonElement().css('background-color', '#555555');
                         display = 'inline-block';
                         class1 = 'search-container-closed';
                         class2 = 'search-container-opened';
@@ -302,7 +280,7 @@
                     this.getSearchContainerElement().switchClass(class1, class2, 500, function () {
                         searchCtrl.getInputElement().css('display', display);
                         if (!isVisible) {
-                            searchCtrl.getButtonElement().css('background-color', '#FFFFFF');
+                            searchCtrl.getButtonElement().css('background-color', '#555555');
                             searchCtrl.getInputElement().focus();
                         } else {
                             searchCtrl.getButtonElement().css('background-color', '#E3E8EB');
@@ -522,51 +500,6 @@
                     $('#flow-status-container').find('.icon-enable-false').removeClass('zero').addClass('disabled');
                 } else {
                     $('#flow-status-container').find('.icon-enable-false').removeClass('disabled').addClass('zero');
-                }
-
-                this.controllerUpToDateCount =
-                    nfCommon.isDefinedAndNotNull(status.upToDateCount) ? status.upToDateCount : '-';
-
-                if (this.controllerUpToDateCount > 0) {
-                    $('#flow-status-container').find('.fa-check').removeClass('zero').addClass('up-to-date');
-                } else {
-                    $('#flow-status-container').find('.fa-check').removeClass('up-to-date').addClass('zero');
-                }
-
-                this.controllerLocallyModifiedCount =
-                    nfCommon.isDefinedAndNotNull(status.locallyModifiedCount) ? status.locallyModifiedCount : '-';
-
-                if (this.controllerLocallyModifiedCount > 0) {
-                    $('#flow-status-container').find('.fa-asterisk').removeClass('zero').addClass('locally-modified');
-                } else {
-                    $('#flow-status-container').find('.fa-asterisk').removeClass('locally-modified').addClass('zero');
-                }
-
-                this.controllerStaleCount =
-                    nfCommon.isDefinedAndNotNull(status.staleCount) ? status.staleCount : '-';
-
-                if (this.controllerStaleCount > 0) {
-                    $('#flow-status-container').find('.fa-arrow-circle-up').removeClass('zero').addClass('stale');
-                } else {
-                    $('#flow-status-container').find('.fa-arrow-circle-up').removeClass('stale').addClass('zero');
-                }
-
-                this.controllerLocallyModifiedAndStaleCount =
-                    nfCommon.isDefinedAndNotNull(status.locallyModifiedAndStaleCount) ? status.locallyModifiedAndStaleCount : '-';
-
-                if (this.controllerLocallyModifiedAndStaleCount > 0) {
-                    $('#flow-status-container').find('.fa-exclamation-circle').removeClass('zero').addClass('locally-modified-and-stale');
-                } else {
-                    $('#flow-status-container').find('.fa-exclamation-circle').removeClass('locally-modified-and-stale').addClass('zero');
-                }
-
-                this.controllerSyncFailureCount =
-                    nfCommon.isDefinedAndNotNull(status.syncFailureCount) ? status.syncFailureCount : '-';
-
-                if (this.controllerSyncFailureCount > 0) {
-                    $('#flow-status-container').find('.fa-question').removeClass('zero').addClass('sync-failure');
-                } else {
-                    $('#flow-status-container').find('.fa-question').removeClass('sync-failure').addClass('zero');
                 }
 
             },

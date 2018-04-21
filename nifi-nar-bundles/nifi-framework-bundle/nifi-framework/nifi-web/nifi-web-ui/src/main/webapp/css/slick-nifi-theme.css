@@ -19,29 +19,31 @@
 
 .slick-header-columns {
     color: #fff;
-    background-color: #728E9B;
+    /*background-color: #728E9B;*/
+    background: black;
 }
 
 .slick-header-column {
-    background: #728E9B;
-    color: #fff;
+    /*background: #728E9B;*/
+    background: black;
+    color: #d8d6d9;
     font-weight: bold;
     cursor: pointer;
 }
 
 .slick-header-column:hover, .slick-header-column-active {
-    color: #fff;
+    color: #979797;
 }
 
 .slick-row {
     position: absolute;
-    background: white;
+    background: rgb(91, 91, 91);
     border: 0;
     line-height: 22px;
 }
 
 .slick-row:hover {
-    background-color: #dce3e6 !important;
+    background-color: #888e91 !important;
 }
 
 .slick-cell {
@@ -50,11 +52,11 @@
 }
 
 .slick-cell.selected {
-    background-color: #fffbe6;
+    background-color: #748aa6;
 }
 
 .slick-row.odd {
-    background: #f4f6f7;
+    background: #767c86;
 }
 
 .slick-cell.invalid {
@@ -70,7 +72,7 @@
 }
 
 .slick-viewport .fa {
-    color: #004849;
+    color: white;
     line-height: 22px;
     margin-top: 0 !important;
     width: 12px;
@@ -80,7 +82,7 @@
 }
 
 .slick-viewport .icon {
-    color: #004849;
+    color: white;
     line-height: 24px;
     margin-top: 0 !important;
     width: 12px;
@@ -104,7 +106,7 @@
 }
 
 .slick-sortable-placeholder {
-    background: #728E9B;
+    background: #595959;
 }
 
 .slick-row.ui-widget-content, .slick-row.ui-state-active {
@@ -112,7 +114,7 @@
     font-size: 12px;
     font-style: normal;
     font-weight: normal;
-    color: #262626;
+    color: whitesmoke;
 }
 
 .slick-cell, .slick-headerrow-column {
