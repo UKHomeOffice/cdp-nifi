@@ -71,6 +71,8 @@
 }(this, function ($, d3, Slick, nfCanvas, nfCanvasUtils, nfErrorHandler, nfDialog, nfClient, nfCommon, nfNgBridge, nfProcessor, nfProcessGroup, nfProcessGroupConfiguration) {
     'use strict';
 
+    var lastSelectedId = null;
+
     // text editor
     var textEditor = function (args) {
         var scope = this;
@@ -568,9 +570,15 @@
                     var variableIndex = args.rows[0];
                     var variable = variablesGrid.getDataItem(variableIndex);
 
-                    // update the details for this variable
-                    $('#affected-components-context').removeClass('unset').text(variable.name);
-                    populateAffectedComponents(variable.affectedComponents);
+                    // only populate affected components if this variable is different than the last selected
+                    if (lastSelectedId === null || lastSelectedId !== variable.id) {
+                        // update the details for this variable
+                        $('#affected-components-context').removeClass('unset').text(variable.name);
+                        populateAffectedComponents(variable.affectedComponents);
+
+                        // update the last selected id
+                        lastSelectedId = variable.id;
+                    }
                 }
             }
         });
@@ -770,7 +778,7 @@
         $('<div class="referencing-component-bulletins"></div>').addClass(affectedControllerService.id + '-affected-bulletins').appendTo(affectedControllerServiceContainer);
 
         // controller service name
-        $('<span class="link"></span>').text(affectedControllerService.name).on('click', function () {
+        $('<span class="referencing-component-name link"></span>').text(affectedControllerService.name).on('click', function () {
             // check if there are outstanding changes
             handleOutstandingChanges().done(function () {
                 // show the component in question
@@ -912,7 +920,7 @@
                         })
                         .map(bulletins, d3.map);
 
-                    bulletinsBySource.forEach(function (sourceId, sourceBulletins) {
+                    bulletinsBySource.each(function (sourceBulletins, sourceId) {
                         $('div.' + sourceId + '-affected-bulletins').each(function () {
                             var bulletinIcon = $(this);
 
@@ -1528,6 +1536,9 @@
         affectedControllerServicesContainer.empty();
 
         $('#variable-registry-affected-unauthorized-components').empty();
+
+        // reset the last selected variable
+        lastSelectedId = null;
     };
 
     return {

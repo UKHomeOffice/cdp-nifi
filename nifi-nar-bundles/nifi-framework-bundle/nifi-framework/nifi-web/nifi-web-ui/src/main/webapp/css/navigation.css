@@ -250,7 +250,7 @@ div.button-spacer-large {
     border: 1px solid #e5ebed;
 }
 
-.brush .extent {
+.brush .selection {
     stroke: #666;
     fill-opacity: .125;
     shape-rendering: crispEdges;
@@ -283,6 +283,18 @@ rect.birdseye-brush {
     position: absolute;
     left: 59px;
     top: 8px;
+}
+
+span.breadcrumb-version-control-green {
+    color: #1a9964;
+}
+
+span.breadcrumb-version-control-red {
+    color: #ba554a;
+}
+
+span.breadcrumb-version-control-gray {
+    color: #666666;
 }
 
 #breadcrumbs-left-border {
