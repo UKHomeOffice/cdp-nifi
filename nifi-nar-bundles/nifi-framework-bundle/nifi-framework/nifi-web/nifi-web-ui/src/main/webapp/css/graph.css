@@ -476,4 +476,5 @@ text.remote-process-group-transmission-secure {
 
 text.remote-process-group-last-refresh {
     fill: #728e9b;
+    text-anchor: end;
 }
