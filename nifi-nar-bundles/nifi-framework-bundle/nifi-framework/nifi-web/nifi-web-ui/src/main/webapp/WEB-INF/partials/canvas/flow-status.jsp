@@ -16,7 +16,7 @@
 --%>
 <%@ page contentType="text/html" pageEncoding="UTF-8" session="false" %>
 <div id="flow-status" flex layout="row" layout-align="space-between center">
-    <div id="flow-status-container" layout="row" layout-align="space-around center">
+    <div id="flow-status-container" flex layout="row" layout-align="space-around center">
         <div class="fa fa-cubes" ng-if="appCtrl.nf.ClusterSummary.isClustered()" title="Connected nodes / Total number of nodes in the cluster"><span id="connected-nodes-count">{{appCtrl.serviceProvider.headerCtrl.flowStatusCtrl.connectedNodesCount}}</span></div>
         <div class="icon icon-threads" title="Active threads"><span id="active-thread-count">{{appCtrl.serviceProvider.headerCtrl.flowStatusCtrl.activeThreadCount}}</span></div>
         <div class="fa fa-list" title="Total queued data"><span id="total-queued">{{appCtrl.serviceProvider.headerCtrl.flowStatusCtrl.totalQueued}}</span></div>

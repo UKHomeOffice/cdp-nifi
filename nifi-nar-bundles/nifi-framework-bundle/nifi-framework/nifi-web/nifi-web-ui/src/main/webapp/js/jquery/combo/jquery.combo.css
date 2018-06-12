@@ -69,7 +69,7 @@
 
 div.selected-disabled-option {
     font-style: italic;
-    color: #828282;
+    color: rgb(186,85,74);
 }
 
 .combo-options ul > li {

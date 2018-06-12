@@ -36,39 +36,39 @@
         $compileProvider.debugInfoEnabled(false);
         //Define app palettes
         $mdThemingProvider.definePalette('basePalette', {
-            '50': '728E9B',
-            '100': '728E9B',
+            '50': '595959',
+            '100': '595959',
             '200': '004849', /* link-color */
             '300': '775351', /* value-color */
-            '400': '728E9B',
-            '500': '728E9B', /* base-color */
-            '600': '728E9B',
-            '700': '728E9B',
-            '800': '728E9B',
+            '400': '595959',
+            '500': '595959', /* base-color */
+            '600': '595959',
+            '700': '595959',
+            '800': '595959',
             '900': 'rgba(249,250,251,0.97)', /* tint base-color 96% */
-            'A100': '728E9B',
-            'A200': '728E9B',
-            'A400': '728E9B',
-            'A700': '728E9B',
+            'A100': '595959',
+            'A200': '595959',
+            'A400': '595959',
+            'A700': '595959',
             'contrastDefaultColor': 'light',
             'contrastDarkColors': ['A100'],
             'contrastLightColors': undefined
         });
         $mdThemingProvider.definePalette('tintPalette', {
-            '50': '728E9B',
-            '100': '728E9B',
+            '50': '595959',
+            '100': '595959',
             '200': 'CCDADB', /* tint link-color 20% */
-            '300': '728E9B',
+            '300': '595959',
             '400': 'AABBC3', /* tint base-color 40% */
-            '500': '728E9B',
+            '500': '595959',
             '600': 'C7D2D7', /* tint base-color 60% */
-            '700': '728E9B',
+            '700': '595959',
             '800': 'E3E8EB', /* tint base-color 80% */
-            '900': '728E9B',
-            'A100': '728E9B',
-            'A200': '728E9B',
-            'A400': '728E9B',
-            'A700': '728E9B',
+            '900': '595959',
+            'A100': '595959',
+            'A200': '595959',
+            'A400': '595959',
+            'A700': '595959',
             'contrastDefaultColor': 'light',
             'contrastDarkColors': ['A100'],
             'contrastLightColors': undefined

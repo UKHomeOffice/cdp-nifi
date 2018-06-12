@@ -62,14 +62,14 @@
 }
 
 #process-group-configuration-last-refreshed {
-    color: #775351;
+    color: #bd8482;
     font-weight: 500;
 }
 
 #flow-cs-availability {
     float: right;
     margin-top: 8px;
-    color: #775351;
+    color: #ab7472;
     font-family: Roboto;
     font-size: 13px;
 }

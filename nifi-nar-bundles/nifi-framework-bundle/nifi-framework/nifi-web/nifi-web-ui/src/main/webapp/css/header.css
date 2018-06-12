@@ -21,7 +21,7 @@
 
 md-toolbar.md-small {
     height: 56px;
-    background-color:#AABBC3; /*tint base-color 40%*/
+    background-color:rgb(0,0,0); /*tint base-color 40%*/
     min-height: 56px;
     max-height: 56px;
     position: relative;
@@ -68,7 +68,7 @@ md-toolbar.md-small .md-toolbar-tools {
 }
 
 #global-menu-button {
-    background-color: #AABBC1; /*tint base-color 40%*/
+  /*  background-color: #AABBC1; tint base-color 40%*/
     border: 0;
     cursor: pointer;
     height: 56px;
@@ -83,7 +83,7 @@ md-toolbar.md-small .md-toolbar-tools {
 #global-menu-content {
     font-size: 13px;
     padding: 3px 0;
-    background-color: rgba(249, 250, 251, 0.97); /*tint base-color 96%*/
+    background-color: rgba(90, 90, 90, 0.97); /*tint base-color 96%*/
     border: 1px solid #004849; /*link-color*/
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
     width: 215px;
@@ -110,12 +110,12 @@ md-toolbar.md-small .md-toolbar-tools {
 }
 
 #global-menu-content a.disabled {
-    color: #a8a8a8 !important;
+    color: rgb(186,85,74) !important;
     cursor: not-allowed;
 }
 
 #global-menu-content a.disabled i {
-    color: #bebebe;
+    color: rgb(186,85,74);
 }
 
 #global-menu-content a:hover{
@@ -163,7 +163,7 @@ md-toolbar.md-small .md-toolbar-tools {
 }
 
 #header .component-button:disabled {
-    background-color:#AABBC3; /*tint base-color 40%*/
+    background-color: rgb(186,85,74); /*tint base-color 40%*/
     cursor:not-allowed;
     box-shadow:none;
 }
@@ -173,7 +173,7 @@ md-toolbar.md-small .md-toolbar-tools {
 }
 
 .component-button-grip {
-    background: repeating-linear-gradient(90deg,rgba(170,187,195,1),rgba(170,187,195,1) 4px,rgba(170,187,195,0) 4px,rgba(170,187,195,0) 6px);
+  /*  background: repeating-linear-gradient(90deg,rgba(170,187,195,1),rgba(170,187,195,1) 4px,rgba(170,187,195,0) 4px,rgba(170,187,195,0) 6px); */
     bottom: 2px;
     height: 4px;
     left: 2px;

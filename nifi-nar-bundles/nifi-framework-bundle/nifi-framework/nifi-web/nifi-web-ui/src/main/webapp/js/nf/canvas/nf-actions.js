@@ -1058,9 +1058,9 @@
                     $('#drop-request-status-dialog').modal('setButtonModel', [{
                         buttonText: 'Stop',
                         color: {
-                            base: '#728E9B',
-                            hover: '#004849',
-                            text: '#ffffff'
+                          base: '#000000',
+                          hover: '#595959',
+                          text: '#ffffff'
                         },
                         handler: {
                             click: function () {
@@ -1595,9 +1595,9 @@
             $('#new-template-dialog').modal('setButtonModel', [{
                 buttonText: 'Create',
                 color: {
-                    base: '#728E9B',
-                    hover: '#004849',
-                    text: '#ffffff'
+                  base: '#000000',
+                  hover: '#595959',
+                  text: '#ffffff'
                 },
                 handler: {
                     click: function () {
@@ -1657,7 +1657,7 @@
                 color: {
                     base: '#E3E8EB',
                     hover: '#C7D2D7',
-                    text: '#004849'
+                    text: '#595959'
                 },
                 handler: {
                     click: function () {

@@ -91,20 +91,22 @@ div.scrollable{
 }
 
 .primary-button{
-    background: #728e9b;
+    background: #595959;
 }
 
 .primary-button:hover:not(.disabled-button){
-    background: rgb(0,72,73);
+    background: #383838;
 }
 
 .secondary-button{
-    background: rgb(227, 232, 235); color: rgb(0, 72, 73);
+    /*background: rgb(227, 232, 235); */
+    color: rgb(0, 72, 73);
+    background: #383838;
 
 }
 
 .secondary-button:hover:not(.disabled-button){
-    background: rgb(199, 210, 215);
+    background: #383838;
     border-color: rgb(199, 210, 215);
     color: rgb(0, 72, 73);
 }

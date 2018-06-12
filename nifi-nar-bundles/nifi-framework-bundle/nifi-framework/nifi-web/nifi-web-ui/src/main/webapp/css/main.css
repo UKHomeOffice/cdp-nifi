@@ -86,7 +86,7 @@ div.context-menu-provenance {
 
 .disabled {
     float: left;
-    color: #728e9b !important;
+    color: rgb(186,85,74) !important;
     fill: #728e9b !important;
     text-shadow: 0 0 4px rgba(255,255,255,1);
 }
