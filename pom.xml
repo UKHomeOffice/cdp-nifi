@@ -131,6 +131,18 @@
                 <enabled>true</enabled>
             </releases>
         </repository>
+         
+        <repository>
+            <id>martiansoftware</id>
+            <url>http://mvn.martiansoftware.com/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+         
     </repositories>
 
     <dependencyManagement>
