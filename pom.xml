@@ -134,7 +134,7 @@
          
         <repository>
             <id>martiansoftware</id>
-            <url>https://mvnrepository.com/artifact/com.martiansoftware/macnificent</url>
+            <url>http://mvn.martiansoftware.com/</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
