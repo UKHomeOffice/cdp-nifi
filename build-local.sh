@@ -22,3 +22,4 @@ cp $DIR/flow.xml.gz $DISTDIR/nifi-${VERSION}/conf/
 
 ln -s nifi-${VERSION} current
 cd $CURDIR
+echo cd $DISTDIR

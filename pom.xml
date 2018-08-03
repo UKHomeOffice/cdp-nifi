@@ -131,6 +131,18 @@
                 <enabled>true</enabled>
             </releases>
         </repository>
+         
+        <repository>
+            <id>martiansoftware</id>
+            <url>https://mvnrepository.com/artifact/com.martiansoftware/macnificent</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+         
     </repositories>
 
     <dependencyManagement>
